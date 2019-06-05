@@ -1,0 +1,45 @@
+<h1>Formulário</h1>
+
+<form action="http:localhost:5500/usuarios" method="POST">
+    <div class="form-group">
+
+        <!-- Texto -->
+        <label class="label">Texto simples</label>
+        <input type="text" name="nome" class="form-control lg-5" placeholder="Texto Simples">
+
+        <!-- Email e Senha -->
+        <label class="label mt-3">Email e senha</label>
+        <input type="email" name="email" placeholder="Email" class="form-control mb-2">
+        <input type="password" name="senha" placeholder="Senha" class="form-control ">
+
+        <!-- Textarea -->
+        <label class="label mt-3">Textarea</label>
+        <textarea class="form-control" name="textarea" placeholder="Textarea..." rows="5"></textarea>
+
+        <!-- Raio button -->
+        <input type="radio" name="admin" />Admin
+        <input type="radio" name="admin" />Comum <br>
+
+        <!-- Checkbox -->
+        <input type="checkbox" name="masculino" /> Masculino
+        <input type="checkbox" name="feminino" /> Feminino
+
+        <!-- Combobox -->
+        <select class="form-control">
+            <option value="sp">São Paulo</option>
+            <option value="rs">Rio Grande do Sul</option>
+            <option value="mg">Minas Gerais</option>
+        </select> <br>
+
+        <!-- Multipla seleção -->
+        <select class="form-control" multiple size="3">
+            <option value="js">Java Script</option>
+            <option value="jsx">React</option>
+            <option value="css">CSS</option>
+        </select>
+
+        <!-- Botões -->
+        <button class="btn btn-outline-primary" formaction="http:localhost:5500/usuarios">Incluir</button>
+        <button class="btn btn-outline-dark">Alterar</button>
+    </div>
+</form>

@@ -1,0 +1,91 @@
+<div class="wm-slider">
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" class="img-fluid" alt="Muro da cidade" style="box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);">
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" class="img-fluid" alt="Gif Cod3e" style="box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);">
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" class="img-fluid" alt="Cidade Rio de Jeneiro">
+    </p>
+
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" class="img-fluid" alt="Avatar" align="left"> Proin diam scelerisque fusce nec bibendum tellus mauris nibh torquent vitae, nunc porttitor vitae in lectus sociosqu ullamcorper nulla hac ut,
+        netus eleifend proin velit leo vitae quisque consequat orci. iaculis vestibulum etiam aenean scelerisque faucibus felis platea tristique mauris sollicitudin, luctus erat auctor malesuada fermentum quisque mollis fusce phasellus, risus posuere
+        potenti nisl diam donec habitant elit varius. ultrices velit dapibus mattis tempor nunc nibh lectus habitant, interdum suscipit id potenti nostra id integer dui, tempus tortor cras varius mi sociosqu quam. dapibus aenean dictum sapien netus scelerisque
+        elit porttitor quam erat, interdum cursus quam auctor orci consectetur dictumst fringilla a, maecenas feugiat vestibulum fringilla curabitur urna tristique molestie.
+    </p>
+
+    <p class="cidade">
+
+    </p>
+
+    <picture>
+        <!-- Exibir diferentes imagens dependendo do tipo de modo que você tenha -->
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+    </picture>
+</div>
+
+<style>
+    .p {
+        position: absolute;
+        display: none;
+    }
+    
+    .texto {
+        width: 400px;
+    }
+    
+    .texto img {
+        margin-right: 10px;
+    }
+    
+    .cidade {
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+
+        const novoInicio = inicio - passo
+
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+
+    }
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos) //Transformando um Node List em um Array
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 5, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+
+    slider()
+</script>

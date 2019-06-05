@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Moderno</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align: center">Exercícios HTML</h1>
+    </header>
+
+    <nav class="jumbotron ml-4 mr-4 mt-3" style="padding: 20px;">
+        <a href="exercicios/anatomiaTag.html">00 - Anatomia da TAG</a> |
+        <a href="exercicios/anatomiaHTML.html">01 - Anatomia do HTML</a> |
+        <a href="exercicios/poucoDeCSS.html">02 - Pouco de CSS</a> |
+        <a href="exercicios/texto1.html">03 - Texto 1</a> |
+        <a href="exercicios/texto2.html">04 - Texto 2</a> |
+        <a href="exercicios/listas.html">05 - Listas</a> |
+        <a href="exercicios/listaAninhada.html">06 - Lista Aninhadas</a> |
+        <a href="exercicios/links.html">07 - Links</a> |
+        <a href="exercicios/tabela.html">08 - Tabela</a> |
+        <a href="exercicios/form/form.html">09 - Formulário</a> |
+        <a href="exercicios/imagens.html">10 - Imagens</a> |
+        <a href="exercicios/video.html">11 - Vídeo</a> |
+        <a href="exercicios/tagsNaoVisuais.html">12 - Tags não visuais</a> |
+    </nav>
+
+    <section id="conteudo" class="jumbotron ml-4 mr-4">
+
+    </section>
+
+    <footer class="jumbotron ml-4 mr-4" style="padding: 20px;">
+        <h4>Curso de Web Moderno</h4>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.href) //Requisição AJAX
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+
+</html>
