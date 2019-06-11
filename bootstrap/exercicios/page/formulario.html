@@ -19,3 +19,54 @@
 </p>
 
 <!-- Formulário -->
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">Exemplo de Formulário</h5>
+    </div>
+    <card class="card-body">
+        <form action="" class="container-fluid">
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Informe o nome">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">@</span>
+                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="Informa o Email">
+                        </div>
+                        <small class="form-text text-muted">Enviaremos um email para confirmar o cadastro!</small>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="lingagemPreferida">Linguagem</label>
+                        <select id="linguagemPreferida" class="form-control">
+                            <option value="">Selecione</option>
+                            <option value="JS">Java Script</option>
+                            <option value="JSX">React</option>
+                            <option value="CS">C#</option>
+                            <option value="JSXV">React Native</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-row mb-0">
+                <div class="col-12 mt-1 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary mr-1">Salvar</button>
+                    <button type="reset" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </card>
+</div>
